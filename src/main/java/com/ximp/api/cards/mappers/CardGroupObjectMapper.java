@@ -11,7 +11,7 @@ public class CardGroupObjectMapper implements RowMapper<CardGroupObject>{
 
 	public CardGroupObject mapRow(ResultSet rs, int rowNum) throws SQLException {
 		CardGroupObject cgObject=new CardGroupObject();
-		cgObject.setBusinessId(rs.getInt("business_id"));
+		cgObject.setId(rs.getInt("id"));
 		cgObject.setCardPrice(rs.getDouble("card_price"));
 		cgObject.setPreloadedAmount(rs.getDouble("preloaded_amount"));
 		return cgObject;

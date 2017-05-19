@@ -2,9 +2,16 @@ package com.ximp.api.cards.objects;
 
 public class CardGroupObject {
 
+	private int id;
 	private double cardPrice;
 	private double preloadedAmount;
-	private int businessId;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public double getCardPrice() {
 		return cardPrice;
 	}
@@ -17,10 +24,5 @@ public class CardGroupObject {
 	public void setPreloadedAmount(double preloadedAmount) {
 		this.preloadedAmount = preloadedAmount;
 	}
-	public int getBusinessId() {
-		return businessId;
-	}
-	public void setBusinessId(int businessId) {
-		this.businessId = businessId;
-	}
+	
 }
