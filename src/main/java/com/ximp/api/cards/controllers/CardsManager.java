@@ -42,4 +42,8 @@ public class CardsManager {
 	public List<CardGroupObject> getCardGroupsOfBusiness(int businessId) throws Exception{
 		return cardsDAO.getCardGroupsOfBusiness(businessId);
 	}
+	
+	public boolean tagCardAsLost(String cardNumber) throws Exception{
+		return cardsDAO.tagCardAsLost(cardNumber);
+	}
 }

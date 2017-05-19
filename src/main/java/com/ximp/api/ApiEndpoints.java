@@ -11,6 +11,7 @@ public class ApiEndpoints {
 	public static final String ASSIGN_CARD_TO_USER			=	"/cards/{cardNumber}/assign/{userId}";
 	public static final String SELL_CARD					=	"/cards/sell";
 	public static final String CARD_GROUPS					=	"/cards/{businessId}/groups";
+	public static final String CARD_LOST_REPORT				=	"/cards/{cardNumber}/report";
 	
 	//ProductsServiceController
 	public static final String PRODUCTS_SERVICES			=	"/products/{businessId}";

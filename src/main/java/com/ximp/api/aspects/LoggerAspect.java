@@ -14,7 +14,7 @@ public class LoggerAspect {
 		Logger aspectLogger=Logger.getLogger(LoggerAspect.class);
 		
 		
-		@Before("execution(* com.loyaltycard.api.products.controllers.*.*(..))")
+		@Before("execution(* com.ximp.api.products.controllers.*.*(..))")
 		public void logApiCalls(JoinPoint joinPoint){
 			aspectLogger.info(joinPoint.getSignature().getName()+" called");
 		}

@@ -123,5 +123,19 @@ public class CardsController {
 		}
 		return response;
 	}
+	
+	@RequestMapping(value=ApiEndpoints.CARD_LOST_REPORT, method=RequestMethod.GET)
+	public ApiResponse reportLostCard(@PathVariable String cardNumber){
+		ApiResponse response=new ApiResponse();
+		try{
+			cardsManager.tagCardAsLost(cardNumber);
+			response.setStatusCode(ResponseCodes.OK);
+			response.setStatus(ResponseStatus.OK);
+		}catch(Exception ex){
+			response.setStatusCode(ResponseCodes.ERROR);
+			response.setStatus(ResponseStatus.ERROR);
+		}
+		return response;
+	}
 }
 

@@ -106,4 +106,16 @@ public class CardsDao {
 		List<CardGroupObject> result=(List<CardGroupObject>) map.get("groups");
 		return result;
 	}
+	
+	
+	public boolean tagCardAsLost(String cardNumber) throws Exception{
+		boolean tagAsLost=false;
+		SimpleJdbcCall procCall=new SimpleJdbcCall(jdbcTemplate).withProcedureName("REPORT_LOST_CARD");
+		MapSqlParameterSource params=new MapSqlParameterSource();
+		params.addValue("cardNumber", cardNumber);
+		SqlParameterSource param=params;
+		procCall.execute(param);
+		tagAsLost=true;
+		return tagAsLost;
+	}
 }
