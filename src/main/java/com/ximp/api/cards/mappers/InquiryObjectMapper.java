@@ -17,6 +17,7 @@ public class InquiryObjectMapper implements RowMapper<InquiryObject>{
 		iObject.setCardId(rs.getLong("cardId"));
 		iObject.setUserId(rs.getLong("users_id"));
 		iObject.setSerialNumber(rs.getString("serial_number"));
+		iObject.setCardHolderName(rs.getString("holder_name"));
 		return iObject;
 	}
 
