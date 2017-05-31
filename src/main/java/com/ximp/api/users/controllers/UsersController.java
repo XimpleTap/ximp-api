@@ -41,4 +41,22 @@ public class UsersController {
 		return response;
 		
 	}
+	
+	@RequestMapping(value=ApiEndpoints.USER_ACTIVATE, method=RequestMethod.GET)
+	public ApiResponse activateUserAccount(@PathVariable String activationCode){
+		ApiResponse response=new ApiResponse();
+		try{
+			usersManager.activateUser(activationCode);
+			response.setStatus(ResponseStatus.OK);
+			response.setStatusCode(ResponseCodes.OK);
+		}catch(Exception e){
+			response.setApiData(null);
+			response.setStatus(ResponseStatus.ERROR);
+			response.setStatusCode(ResponseCodes.ERROR);
+			e.printStackTrace();
+		}
+		
+		return response;
+		
+	}
 }

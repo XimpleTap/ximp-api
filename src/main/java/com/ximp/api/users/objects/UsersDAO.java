@@ -47,4 +47,14 @@ public class UsersDAO {
 		return response;
 		
 	}
+	
+	public void activateUser(String activationCode) throws Exception{
+		SimpleJdbcCall procCall=new SimpleJdbcCall(jdbcTemplate).withProcedureName("ACTIVATE_USER")
+				.returningResultSet("activationCode", new LoginResponseMapper());
+		MapSqlParameterSource params=new MapSqlParameterSource();
+		params.addValue("activationCode", activationCode);
+		SqlParameterSource param=params;
+		procCall.execute(param);
+		
+	}
 }

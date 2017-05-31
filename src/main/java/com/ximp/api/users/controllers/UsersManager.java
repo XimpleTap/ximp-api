@@ -16,5 +16,9 @@ public class UsersManager {
 	public LoginResponse loginCashier(Login login) throws Exception{
 		return usersDAO.loginCashier(login);
 	}
+	
+	public void activateUser(String activationCode) throws Exception{
+		usersDAO.activateUser(activationCode);
+	}
 
 }
