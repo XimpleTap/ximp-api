@@ -28,6 +28,11 @@ public class UsersManager {
 	
 	public void sendActivationMail(long userId) throws Exception{
 		String activationCode=usersDAO.generateActivationCode(userId);
+		sendMail(activationCode);
+		
+	}
+
+	private void sendMail(String messageToSend) throws Exception{
 		JavaMailSenderImpl mailSender=new JavaMailSenderImpl();
 		
 		mailSender.setHost("smtp.gmail.com");
@@ -40,14 +45,14 @@ public class UsersManager {
 	    props.put("mail.transport.protocol", "smtp");
 	    props.put("mail.smtp.auth", "true");
 	    props.put("mail.smtp.starttls.enable", "true");
+	    props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 	    
 	    SimpleMailMessage message = new SimpleMailMessage(); 
         message.setTo("ezerdumale@gmail.com"); 
         message.setSubject("Activation"); 
-        message.setText("https://apps.ximpletap.com:8080/users/activate/"+activationCode);
+        message.setText("https://apps.ximpletap.com:8080/users/activate/"+messageToSend);
         
-	    JavaMailSender sender=mailSender;
-	    sender.send(message);
+	   JavaMailSender sender=mailSender;
+	   sender.send(message);
 	}
-
 }
