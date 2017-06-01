@@ -25,6 +25,7 @@ public class ApiEndpoints {
 	//UsersController
 	public static final String USER_LOGIN					=	"/users/login";
 	public static final String USER_ACTIVATE				=	"/users/activate/{activationCode}";
+	public static final String USER_MAIL_ACTIVATION			=	"/users/{userId}/activate";
 	
 }
 

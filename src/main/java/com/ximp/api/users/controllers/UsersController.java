@@ -59,4 +59,22 @@ public class UsersController {
 		return response;
 		
 	}
+	
+	@RequestMapping(value=ApiEndpoints.USER_MAIL_ACTIVATION, method=RequestMethod.GET)
+	public ApiResponse sendActivationEmail(@PathVariable long userId){
+		ApiResponse response=new ApiResponse();
+		try{
+			usersManager.sendActivationMail(userId);
+			response.setStatus(ResponseStatus.OK);
+			response.setStatusCode(ResponseCodes.OK);
+		}catch(Exception e){
+			response.setApiData(null);
+			response.setStatus(ResponseStatus.ERROR);
+			response.setStatusCode(ResponseCodes.ERROR);
+			e.printStackTrace();
+		}
+		
+		return response;
+		
+	}
 }

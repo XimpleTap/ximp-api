@@ -57,4 +57,15 @@ public class UsersDAO {
 		procCall.execute(param);
 		
 	}
+	
+	public String generateActivationCode(long userId) throws Exception{
+		String activationCode=null;
+		SimpleJdbcCall procCall=new SimpleJdbcCall(jdbcTemplate).withProcedureName("GENERATE_ACTIVATION_CODE");
+		MapSqlParameterSource params=new MapSqlParameterSource();
+		params.addValue("userId", userId);
+		SqlParameterSource param=params;
+		Map<String, Object> result=procCall.execute(param);
+		activationCode=(String)result.get("activationCode");
+		return activationCode;
+	}
 }
