@@ -112,18 +112,15 @@
     	<version>4.3.5.RELEASE</version>
 	</dependency>
 	
-	<dependency>
-    	<groupId>javax.mail</groupId>
-    	<artifactId>javax.mail-api</artifactId>
-    	<version>1.6.0-rc2</version>
-	</dependency>
+	
 	
 	<dependency>
     	<groupId>javax.mail</groupId>
     	<artifactId>mail</artifactId>
     	<version>1.4.7</version>
 	</dependency>
-
+	
+	
   </dependencies>   
   <packaging>war</packaging>
   <version>1.0</version>
