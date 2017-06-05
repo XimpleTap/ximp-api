@@ -19,7 +19,7 @@ public class CardsManager {
 	@Autowired
 	CardsDao cardsDAO;
 	
-	public InquiryObject inquireCardBalance(String cardNumber) throws Exception{
+	public InquiryObject inquireCardBalance(String cardNumber) throws Exception, IndexOutOfBoundsException{
 		return cardsDAO.inquireCardBalance(cardNumber);
 	}
 	

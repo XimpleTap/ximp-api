@@ -32,6 +32,7 @@ public class RewardsController {
 			response.setStatus(ResponseStatus.OK);
 			response.setStatusCode(ResponseCodes.OK);
 		}catch(Exception e){
+			response.setApiData(e.getMessage());
 			response.setStatus(ResponseStatus.ERROR);
 			response.setStatusCode(ResponseCodes.ERROR);
 		}
@@ -48,6 +49,7 @@ public class RewardsController {
 			response.setStatus(ResponseStatus.OK);
 			response.setStatusCode(ResponseCodes.OK);
 		}catch(Exception e){
+			response.setApiData(e.getMessage());
 			response.setTransactionType(TransactionTypes.CLAIM);
 			response.setStatus(ResponseStatus.ERROR);
 			response.setStatusCode(ResponseCodes.ERROR);

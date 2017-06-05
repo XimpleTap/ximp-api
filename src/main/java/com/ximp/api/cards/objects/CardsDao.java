@@ -31,7 +31,7 @@ public class CardsDao {
 	
 	
 	@SuppressWarnings("unchecked")
-	public InquiryObject inquireCardBalance(String cardNumber) throws Exception{
+	public InquiryObject inquireCardBalance(String cardNumber) throws Exception, IndexOutOfBoundsException{
 		InquiryObject iObject=new InquiryObject();
 		SimpleJdbcCall procCall=new SimpleJdbcCall(jdbcTemplate)
 				.withProcedureName("INQUIRE_CARD_BALANCE")

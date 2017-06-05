@@ -42,6 +42,7 @@ public class CardsController {
 			response.setTransactionType(TransactionTypes.RELOAD);
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
+			response.setApiData(ex.getMessage());
 		}
 		return response;
 	}
@@ -55,10 +56,17 @@ public class CardsController {
 			response.setTransactionType(TransactionTypes.INQUIRE);
 			response.setStatusCode(ResponseCodes.OK);
 			response.setStatus(ResponseStatus.OK);
+		}
+		catch(IndexOutOfBoundsException ex){
+			response.setTransactionType(TransactionTypes.INQUIRE);
+			response.setStatusCode(ResponseCodes.ERROR);
+			response.setStatus(ResponseStatus.ERROR);
+			response.setApiData("Card not found");
 		}catch(Exception ex){
 			response.setTransactionType(TransactionTypes.INQUIRE);
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
+			response.setApiData(ex.getMessage());
 		}
 		return response;
 	}
@@ -73,6 +81,7 @@ public class CardsController {
 			response.setStatusCode(ResponseCodes.OK);
 			response.setStatus(ResponseStatus.OK);
 		}catch(Exception ex){
+			response.setApiData(ex.getMessage());
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
 		}
@@ -87,6 +96,7 @@ public class CardsController {
 			response.setStatusCode(ResponseCodes.OK);
 			response.setStatus(ResponseStatus.OK);
 		}catch(Exception ex){
+			response.setApiData(ex.getMessage());
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
 		}
@@ -103,6 +113,7 @@ public class CardsController {
 			response.setStatus(ResponseStatus.OK);
 			response.setApiData("READY FOR USE:"+csObject.getCardNumber());
 		}catch(Exception ex){
+			response.setApiData(ex.getMessage());
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
 		}
@@ -118,6 +129,7 @@ public class CardsController {
 			response.setStatusCode(ResponseCodes.OK);
 			response.setStatus(ResponseStatus.OK);
 		}catch(Exception ex){
+			response.setApiData(ex.getMessage());
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
 		}
@@ -132,6 +144,7 @@ public class CardsController {
 			response.setStatusCode(ResponseCodes.OK);
 			response.setStatus(ResponseStatus.OK);
 		}catch(Exception ex){
+			response.setApiData(ex.getMessage());
 			response.setStatusCode(ResponseCodes.ERROR);
 			response.setStatus(ResponseStatus.ERROR);
 		}

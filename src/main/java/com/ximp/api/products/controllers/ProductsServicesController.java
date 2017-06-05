@@ -33,10 +33,10 @@ public class ProductsServicesController {
 			response.setStatus(ResponseStatus.OK);
 			response.setStatusCode(ResponseCodes.OK);
 		}catch(Exception e){
-			response.setApiData(null);
+			response.setApiData(e.getMessage());
 			response.setStatus(ResponseStatus.ERROR);
 			response.setStatusCode(ResponseCodes.ERROR);
-			e.printStackTrace();
+			
 		}
 		
 		return response;
